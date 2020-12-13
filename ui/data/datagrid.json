@@ -1,0 +1,11 @@
+{
+    "sortColumn": "priority",
+  
+    "columns": [
+      {"name": "priority", "title": "Priority", "width": 80, "type": "number", "canEdit": true},
+      {"name": "isComplete", "title": "Done", "width": 70, "type": "checkbox", "canEdit": true},
+      {"name": "title", "title": "Title", "width": 180, "canEdit": true},
+      {"name": "created", "title": "Created", "width": 120, "type": "datetime", "format": "MM/DD/YYYY"},
+      {"name": "modified", "title": "Modified", "width": 120, "type": "datetime", "format": "MM/DD/YYYY"}
+    ]    
+  }

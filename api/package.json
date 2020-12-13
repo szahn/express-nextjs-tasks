@@ -1,0 +1,44 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint ./",
+    "test": "jest --silent --coverage",
+    "docker-build": "docker build -t boilerplate-api-app .",
+    "docker-run": "docker run -d -p 3001:3000 --env-file ./.env boilerplate-api-app",
+    "k8-deploy": "kubectl apply -f ./k8",
+    "helm-deploy": "helm upgrade",
+    "dev": "nodemon --exec yarn start",
+    "start": "node -r dotenv/config src/index.js",
+    "util:jwt-token": "node -r dotenv/config src/generateJwt.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-winston": "^4.0.5",
+    "helmet": "^4.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.29.1",
+    "prom-client": "^12.0.0",
+    "uuid": "^8.3.2",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "eslint": "^7.15.0",
+    "jest": "^26.6.3",
+    "nodemon": "^2.0.6",
+    "supertest": "^6.0.1"
+  },
+  "jest": {
+    "verbose": true,
+    "testURL": "http://localhost/",
+    "testEnvironment": "node",
+    "restoreMocks": true
+  }
+}
